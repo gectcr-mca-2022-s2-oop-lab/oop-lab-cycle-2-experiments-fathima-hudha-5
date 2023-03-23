@@ -3,28 +3,22 @@ package cycle2;
 import java.util.*;
 
 class Search {
-    int count;
-    int[] array = new int[10];
-   
-    public void get_array() {
-        int count_loop;
+
+    public static void main(String[] args) {
+        int[] array = new int[10];
+        int i,count,search,flag=0;
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter size of array : ");
-        this.count = sc.nextInt();
+        count = sc.nextInt();
        
         System.out.print("Enter matrix elements : ");
-        for (count_loop = 0; count_loop < this.count; count_loop++) {
-                this.array[count_loop] = sc.nextInt();    
+        for (i = 0; i < count; i++) {
+                array[i] = sc.nextInt();    
         }
-    }
-
-    public void search(){
-        int count_loop,search,flag=0;
-        Scanner sc = new Scanner(System.in);
         System.out.print("Enter element to be search : ");
         search = sc.nextInt();
-        for(count_loop = 0; count_loop < this.count;count_loop++){
-            if(array[count_loop] == search){
+        for(i = 0; i < count;i++){
+            if(array[i] == search){
                 flag=1;
                 break;
             }
@@ -35,11 +29,5 @@ class Search {
         else{
             System.out.println("Element not present");
         }
-    }
-
-    public static void main(String[] args) {
-        Search data = new Search();
-        data.get_array();
-        data.search();
     }
 }
